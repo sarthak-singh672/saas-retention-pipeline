@@ -1,0 +1,1551 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20262.26.0603.1643                               -->
+<workbook original-version='18.1' source-build='2026.2.0 (20262.26.0603.1643)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource inline='true' name='Clipboard_20260627T171907' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Clipboard_20260627T171907' name='Clipboard_20260627T171907leaf'>
+            <connection class='textscan' directory='/Users/sarthaksingh/Documents/My Tableau Repository/Datasources' filename='Clipboard_20260627T171907.txt' />
+          </named-connection>
+        </named-connections>
+        <relation connection='Clipboard_20260627T171907leaf' name='Clipboard_20260627T171907#txt' table='[Clipboard_20260627T171907#txt]' type='table' />
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Clipboard_20260627T171907' datatype='table' name='[__tableau_internal_object_id__].[Clipboard_20260627T171907]' role='measure' type='quantitative' />
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;India&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='Clipboard_20260627T171907' id='Clipboard_20260627T171907'>
+            <properties context=''>
+              <relation connection='Clipboard_20260627T171907leaf' name='Clipboard_20260627T171907#txt' table='[Clipboard_20260627T171907#txt]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='accounts (saas_retention_db)' inline='true' name='federated.1g0t1s70i6gt651fuh1w3060xwnu' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='localhost' name='postgres.16icfux08elj2c13m3cvn1dabiuj'>
+            <connection authentication='username-password' class='postgres' dbname='saas_retention_db' one-time-sql='' port='5432' server='localhost' username='sarthaksingh' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation connection='postgres.16icfux08elj2c13m3cvn1dabiuj' name='accounts' table='[public].[accounts]' type='table' />
+          <relation connection='postgres.16icfux08elj2c13m3cvn1dabiuj' name='churn_events' table='[public].[churn_events]' type='table' />
+          <relation connection='postgres.16icfux08elj2c13m3cvn1dabiuj' name='subscriptions' table='[public].[subscriptions]' type='table' />
+          <relation connection='postgres.16icfux08elj2c13m3cvn1dabiuj' name='support_tickets' table='[public].[support_tickets]' type='table' />
+        </relation>
+        <cols>
+          <map key='[account_id (churn_events)]' value='[churn_events].[account_id]' />
+          <map key='[account_id (subscriptions)]' value='[subscriptions].[account_id]' />
+          <map key='[account_id (support_tickets)]' value='[support_tickets].[account_id]' />
+          <map key='[account_id]' value='[accounts].[account_id]' />
+          <map key='[account_name]' value='[accounts].[account_name]' />
+          <map key='[arr_amount]' value='[subscriptions].[arr_amount]' />
+          <map key='[auto_renew_flag]' value='[subscriptions].[auto_renew_flag]' />
+          <map key='[billing_frequency]' value='[subscriptions].[billing_frequency]' />
+          <map key='[churn_category]' value='[churn_events].[churn_category]' />
+          <map key='[churn_date]' value='[churn_events].[churn_date]' />
+          <map key='[churn_event_id]' value='[churn_events].[churn_event_id]' />
+          <map key='[churn_flag (subscriptions)]' value='[subscriptions].[churn_flag]' />
+          <map key='[churn_flag]' value='[accounts].[churn_flag]' />
+          <map key='[churn_month]' value='[churn_events].[churn_month]' />
+          <map key='[churn_month_label]' value='[churn_events].[churn_month_label]' />
+          <map key='[churn_year]' value='[churn_events].[churn_year]' />
+          <map key='[closed_at]' value='[support_tickets].[closed_at]' />
+          <map key='[country]' value='[accounts].[country]' />
+          <map key='[days_since_signup]' value='[accounts].[days_since_signup]' />
+          <map key='[downgrade_flag]' value='[subscriptions].[downgrade_flag]' />
+          <map key='[duration_days]' value='[subscriptions].[duration_days]' />
+          <map key='[duration_months]' value='[subscriptions].[duration_months]' />
+          <map key='[end_date]' value='[subscriptions].[end_date]' />
+          <map key='[escalation_flag]' value='[support_tickets].[escalation_flag]' />
+          <map key='[feedback_text]' value='[churn_events].[feedback_text]' />
+          <map key='[first_response_time_minutes]' value='[support_tickets].[first_response_time_minutes]' />
+          <map key='[industry]' value='[accounts].[industry]' />
+          <map key='[is_reactivation]' value='[churn_events].[is_reactivation]' />
+          <map key='[is_trial (subscriptions)]' value='[subscriptions].[is_trial]' />
+          <map key='[is_trial]' value='[accounts].[is_trial]' />
+          <map key='[mrr_amount]' value='[subscriptions].[mrr_amount]' />
+          <map key='[plan_tier (subscriptions)]' value='[subscriptions].[plan_tier]' />
+          <map key='[plan_tier]' value='[accounts].[plan_tier]' />
+          <map key='[preceding_downgrade_flag]' value='[churn_events].[preceding_downgrade_flag]' />
+          <map key='[preceding_upgrade_flag]' value='[churn_events].[preceding_upgrade_flag]' />
+          <map key='[priority]' value='[support_tickets].[priority]' />
+          <map key='[reason_code]' value='[churn_events].[reason_code]' />
+          <map key='[referral_source]' value='[accounts].[referral_source]' />
+          <map key='[refund_amount_usd]' value='[churn_events].[refund_amount_usd]' />
+          <map key='[resolution_time_hours]' value='[support_tickets].[resolution_time_hours]' />
+          <map key='[satisfaction_label]' value='[support_tickets].[satisfaction_label]' />
+          <map key='[satisfaction_score]' value='[support_tickets].[satisfaction_score]' />
+          <map key='[seats (subscriptions)]' value='[subscriptions].[seats]' />
+          <map key='[seats]' value='[accounts].[seats]' />
+          <map key='[signup_date]' value='[accounts].[signup_date]' />
+          <map key='[sla_breached]' value='[support_tickets].[sla_breached]' />
+          <map key='[start_date]' value='[subscriptions].[start_date]' />
+          <map key='[submitted_at]' value='[support_tickets].[submitted_at]' />
+          <map key='[subscription_id]' value='[subscriptions].[subscription_id]' />
+          <map key='[subscription_status]' value='[subscriptions].[subscription_status]' />
+          <map key='[ticket_id]' value='[support_tickets].[ticket_id]' />
+          <map key='[upgrade_flag]' value='[subscriptions].[upgrade_flag]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>account_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[account_id]</local-name>
+            <parent-name>[accounts]</parent-name>
+            <remote-alias>account_id</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[accounts_08FAB6C1587746F9A1A92F9EA1ADD2BE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>account_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[account_name]</local-name>
+            <parent-name>[accounts]</parent-name>
+            <remote-alias>account_name</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[accounts_08FAB6C1587746F9A1A92F9EA1ADD2BE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>industry</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[industry]</local-name>
+            <parent-name>[accounts]</parent-name>
+            <remote-alias>industry</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[accounts_08FAB6C1587746F9A1A92F9EA1ADD2BE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>country</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[country]</local-name>
+            <parent-name>[accounts]</parent-name>
+            <remote-alias>country</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[accounts_08FAB6C1587746F9A1A92F9EA1ADD2BE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>signup_date</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[signup_date]</local-name>
+            <parent-name>[accounts]</parent-name>
+            <remote-alias>signup_date</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[accounts_08FAB6C1587746F9A1A92F9EA1ADD2BE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>referral_source</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[referral_source]</local-name>
+            <parent-name>[accounts]</parent-name>
+            <remote-alias>referral_source</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[accounts_08FAB6C1587746F9A1A92F9EA1ADD2BE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>plan_tier</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[plan_tier]</local-name>
+            <parent-name>[accounts]</parent-name>
+            <remote-alias>plan_tier</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[accounts_08FAB6C1587746F9A1A92F9EA1ADD2BE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>seats</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[seats]</local-name>
+            <parent-name>[accounts]</parent-name>
+            <remote-alias>seats</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <object-id>[accounts_08FAB6C1587746F9A1A92F9EA1ADD2BE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_trial</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[is_trial]</local-name>
+            <parent-name>[accounts]</parent-name>
+            <remote-alias>is_trial</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <object-id>[accounts_08FAB6C1587746F9A1A92F9EA1ADD2BE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>churn_flag</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[churn_flag]</local-name>
+            <parent-name>[accounts]</parent-name>
+            <remote-alias>churn_flag</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <object-id>[accounts_08FAB6C1587746F9A1A92F9EA1ADD2BE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>days_since_signup</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[days_since_signup]</local-name>
+            <parent-name>[accounts]</parent-name>
+            <remote-alias>days_since_signup</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <object-id>[accounts_08FAB6C1587746F9A1A92F9EA1ADD2BE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>churn_event_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[churn_event_id]</local-name>
+            <parent-name>[churn_events]</parent-name>
+            <remote-alias>churn_event_id</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[churn_events_E6797AB9E78B4BE39A44102658C98FB3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>account_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[account_id (churn_events)]</local-name>
+            <parent-name>[churn_events]</parent-name>
+            <remote-alias>account_id</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[churn_events_E6797AB9E78B4BE39A44102658C98FB3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>churn_date</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[churn_date]</local-name>
+            <parent-name>[churn_events]</parent-name>
+            <remote-alias>churn_date</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[churn_events_E6797AB9E78B4BE39A44102658C98FB3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>reason_code</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[reason_code]</local-name>
+            <parent-name>[churn_events]</parent-name>
+            <remote-alias>reason_code</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[churn_events_E6797AB9E78B4BE39A44102658C98FB3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>refund_amount_usd</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[refund_amount_usd]</local-name>
+            <parent-name>[churn_events]</parent-name>
+            <remote-alias>refund_amount_usd</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>17</precision>
+            <contains-null>true</contains-null>
+            <object-id>[churn_events_E6797AB9E78B4BE39A44102658C98FB3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>preceding_upgrade_flag</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[preceding_upgrade_flag]</local-name>
+            <parent-name>[churn_events]</parent-name>
+            <remote-alias>preceding_upgrade_flag</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <object-id>[churn_events_E6797AB9E78B4BE39A44102658C98FB3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>preceding_downgrade_flag</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[preceding_downgrade_flag]</local-name>
+            <parent-name>[churn_events]</parent-name>
+            <remote-alias>preceding_downgrade_flag</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <object-id>[churn_events_E6797AB9E78B4BE39A44102658C98FB3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_reactivation</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[is_reactivation]</local-name>
+            <parent-name>[churn_events]</parent-name>
+            <remote-alias>is_reactivation</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <object-id>[churn_events_E6797AB9E78B4BE39A44102658C98FB3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>feedback_text</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[feedback_text]</local-name>
+            <parent-name>[churn_events]</parent-name>
+            <remote-alias>feedback_text</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[churn_events_E6797AB9E78B4BE39A44102658C98FB3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>churn_month</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[churn_month]</local-name>
+            <parent-name>[churn_events]</parent-name>
+            <remote-alias>churn_month</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <object-id>[churn_events_E6797AB9E78B4BE39A44102658C98FB3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>churn_year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[churn_year]</local-name>
+            <parent-name>[churn_events]</parent-name>
+            <remote-alias>churn_year</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <object-id>[churn_events_E6797AB9E78B4BE39A44102658C98FB3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>churn_month_label</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[churn_month_label]</local-name>
+            <parent-name>[churn_events]</parent-name>
+            <remote-alias>churn_month_label</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[churn_events_E6797AB9E78B4BE39A44102658C98FB3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>churn_category</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[churn_category]</local-name>
+            <parent-name>[churn_events]</parent-name>
+            <remote-alias>churn_category</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[churn_events_E6797AB9E78B4BE39A44102658C98FB3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>subscription_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[subscription_id]</local-name>
+            <parent-name>[subscriptions]</parent-name>
+            <remote-alias>subscription_id</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[subscriptions_ED89C8A83D1844469EB79439D0C9D2D8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>account_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[account_id (subscriptions)]</local-name>
+            <parent-name>[subscriptions]</parent-name>
+            <remote-alias>account_id</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[subscriptions_ED89C8A83D1844469EB79439D0C9D2D8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>start_date</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[start_date]</local-name>
+            <parent-name>[subscriptions]</parent-name>
+            <remote-alias>start_date</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[subscriptions_ED89C8A83D1844469EB79439D0C9D2D8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>end_date</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[end_date]</local-name>
+            <parent-name>[subscriptions]</parent-name>
+            <remote-alias>end_date</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[subscriptions_ED89C8A83D1844469EB79439D0C9D2D8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>plan_tier</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[plan_tier (subscriptions)]</local-name>
+            <parent-name>[subscriptions]</parent-name>
+            <remote-alias>plan_tier</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[subscriptions_ED89C8A83D1844469EB79439D0C9D2D8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>seats</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[seats (subscriptions)]</local-name>
+            <parent-name>[subscriptions]</parent-name>
+            <remote-alias>seats</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <object-id>[subscriptions_ED89C8A83D1844469EB79439D0C9D2D8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>mrr_amount</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[mrr_amount]</local-name>
+            <parent-name>[subscriptions]</parent-name>
+            <remote-alias>mrr_amount</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <object-id>[subscriptions_ED89C8A83D1844469EB79439D0C9D2D8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>arr_amount</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[arr_amount]</local-name>
+            <parent-name>[subscriptions]</parent-name>
+            <remote-alias>arr_amount</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <object-id>[subscriptions_ED89C8A83D1844469EB79439D0C9D2D8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_trial</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[is_trial (subscriptions)]</local-name>
+            <parent-name>[subscriptions]</parent-name>
+            <remote-alias>is_trial</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <object-id>[subscriptions_ED89C8A83D1844469EB79439D0C9D2D8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>upgrade_flag</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[upgrade_flag]</local-name>
+            <parent-name>[subscriptions]</parent-name>
+            <remote-alias>upgrade_flag</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <object-id>[subscriptions_ED89C8A83D1844469EB79439D0C9D2D8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>downgrade_flag</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[downgrade_flag]</local-name>
+            <parent-name>[subscriptions]</parent-name>
+            <remote-alias>downgrade_flag</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <object-id>[subscriptions_ED89C8A83D1844469EB79439D0C9D2D8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>churn_flag</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[churn_flag (subscriptions)]</local-name>
+            <parent-name>[subscriptions]</parent-name>
+            <remote-alias>churn_flag</remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <object-id>[subscriptions_ED89C8A83D1844469EB79439D0C9D2D8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>billing_frequency</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[billing_frequency]</local-name>
+            <parent-name>[subscriptions]</parent-name>
+            <remote-alias>billing_frequency</remote-alias>
+            <ordinal>39</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[subscriptions_ED89C8A83D1844469EB79439D0C9D2D8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>auto_renew_flag</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[auto_renew_flag]</local-name>
+            <parent-name>[subscriptions]</parent-name>
+            <remote-alias>auto_renew_flag</remote-alias>
+            <ordinal>40</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <object-id>[subscriptions_ED89C8A83D1844469EB79439D0C9D2D8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>duration_days</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[duration_days]</local-name>
+            <parent-name>[subscriptions]</parent-name>
+            <remote-alias>duration_days</remote-alias>
+            <ordinal>41</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>17</precision>
+            <contains-null>true</contains-null>
+            <object-id>[subscriptions_ED89C8A83D1844469EB79439D0C9D2D8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>duration_months</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[duration_months]</local-name>
+            <parent-name>[subscriptions]</parent-name>
+            <remote-alias>duration_months</remote-alias>
+            <ordinal>42</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>17</precision>
+            <contains-null>true</contains-null>
+            <object-id>[subscriptions_ED89C8A83D1844469EB79439D0C9D2D8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>subscription_status</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[subscription_status]</local-name>
+            <parent-name>[subscriptions]</parent-name>
+            <remote-alias>subscription_status</remote-alias>
+            <ordinal>43</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[subscriptions_ED89C8A83D1844469EB79439D0C9D2D8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ticket_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ticket_id]</local-name>
+            <parent-name>[support_tickets]</parent-name>
+            <remote-alias>ticket_id</remote-alias>
+            <ordinal>45</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[support_tickets_437EDC679DB64F9284C29618836518D5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>account_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[account_id (support_tickets)]</local-name>
+            <parent-name>[support_tickets]</parent-name>
+            <remote-alias>account_id</remote-alias>
+            <ordinal>46</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[support_tickets_437EDC679DB64F9284C29618836518D5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>submitted_at</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[submitted_at]</local-name>
+            <parent-name>[support_tickets]</parent-name>
+            <remote-alias>submitted_at</remote-alias>
+            <ordinal>47</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[support_tickets_437EDC679DB64F9284C29618836518D5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>closed_at</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[closed_at]</local-name>
+            <parent-name>[support_tickets]</parent-name>
+            <remote-alias>closed_at</remote-alias>
+            <ordinal>48</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[support_tickets_437EDC679DB64F9284C29618836518D5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>resolution_time_hours</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[resolution_time_hours]</local-name>
+            <parent-name>[support_tickets]</parent-name>
+            <remote-alias>resolution_time_hours</remote-alias>
+            <ordinal>49</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>17</precision>
+            <contains-null>true</contains-null>
+            <object-id>[support_tickets_437EDC679DB64F9284C29618836518D5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>priority</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[priority]</local-name>
+            <parent-name>[support_tickets]</parent-name>
+            <remote-alias>priority</remote-alias>
+            <ordinal>50</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[support_tickets_437EDC679DB64F9284C29618836518D5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>first_response_time_minutes</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[first_response_time_minutes]</local-name>
+            <parent-name>[support_tickets]</parent-name>
+            <remote-alias>first_response_time_minutes</remote-alias>
+            <ordinal>51</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <object-id>[support_tickets_437EDC679DB64F9284C29618836518D5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>satisfaction_score</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[satisfaction_score]</local-name>
+            <parent-name>[support_tickets]</parent-name>
+            <remote-alias>satisfaction_score</remote-alias>
+            <ordinal>52</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>17</precision>
+            <contains-null>true</contains-null>
+            <object-id>[support_tickets_437EDC679DB64F9284C29618836518D5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>escalation_flag</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[escalation_flag]</local-name>
+            <parent-name>[support_tickets]</parent-name>
+            <remote-alias>escalation_flag</remote-alias>
+            <ordinal>53</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <object-id>[support_tickets_437EDC679DB64F9284C29618836518D5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sla_breached</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[sla_breached]</local-name>
+            <parent-name>[support_tickets]</parent-name>
+            <remote-alias>sla_breached</remote-alias>
+            <ordinal>54</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>19</precision>
+            <contains-null>true</contains-null>
+            <object-id>[support_tickets_437EDC679DB64F9284C29618836518D5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>satisfaction_label</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[satisfaction_label]</local-name>
+            <parent-name>[support_tickets]</parent-name>
+            <remote-alias>satisfaction_label</remote-alias>
+            <ordinal>55</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2147483647</width>
+            <contains-null>true</contains-null>
+            <cast-to-local-type>true</cast-to-local-type>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[support_tickets_437EDC679DB64F9284C29618836518D5]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='accounts1' datatype='table' name='[__tableau_internal_object_id__].[accounts_08FAB6C1587746F9A1A92F9EA1ADD2BE]' role='measure' type='quantitative' />
+      <column caption='churn_events' datatype='table' name='[__tableau_internal_object_id__].[churn_events_E6797AB9E78B4BE39A44102658C98FB3]' role='measure' type='quantitative' />
+      <column caption='subscriptions' datatype='table' name='[__tableau_internal_object_id__].[subscriptions_ED89C8A83D1844469EB79439D0C9D2D8]' role='measure' type='quantitative' />
+      <column caption='support_tickets' datatype='table' name='[__tableau_internal_object_id__].[support_tickets_437EDC679DB64F9284C29618836518D5]' role='measure' type='quantitative' />
+      <column caption='Account Id (Churn Events)' datatype='string' name='[account_id (churn_events)]' role='dimension' type='nominal' />
+      <column caption='Account Id (Subscriptions)' datatype='string' name='[account_id (subscriptions)]' role='dimension' type='nominal' />
+      <column caption='Account Id (Support Tickets)' datatype='string' name='[account_id (support_tickets)]' role='dimension' type='nominal' />
+      <column caption='Account Id' datatype='string' name='[account_id]' role='dimension' type='nominal' />
+      <column caption='Account Name' datatype='string' name='[account_name]' role='dimension' type='nominal' />
+      <column caption='Arr Amount' datatype='integer' name='[arr_amount]' role='measure' type='quantitative' />
+      <column caption='Auto Renew Flag' datatype='integer' name='[auto_renew_flag]' role='measure' type='quantitative' />
+      <column caption='Billing Frequency' datatype='string' name='[billing_frequency]' role='dimension' type='nominal' />
+      <column caption='Churn Category' datatype='string' name='[churn_category]' role='dimension' type='nominal' />
+      <column caption='Churn Date' datatype='datetime' name='[churn_date]' role='dimension' type='ordinal' />
+      <column caption='Churn Event Id' datatype='string' name='[churn_event_id]' role='dimension' type='nominal' />
+      <column caption='Churn Flag (Subscriptions)' datatype='integer' name='[churn_flag (subscriptions)]' role='measure' type='quantitative' />
+      <column caption='Churn Flag' datatype='integer' name='[churn_flag]' role='measure' type='quantitative' />
+      <column caption='Churn Month' datatype='integer' name='[churn_month]' role='dimension' type='quantitative' />
+      <column caption='Churn Month Label' datatype='string' name='[churn_month_label]' role='dimension' type='nominal' />
+      <column caption='Churn Year' datatype='integer' name='[churn_year]' role='dimension' type='quantitative' />
+      <column caption='Closed At' datatype='datetime' name='[closed_at]' role='dimension' type='ordinal' />
+      <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column caption='Days Since Signup' datatype='integer' name='[days_since_signup]' role='measure' type='quantitative' />
+      <column caption='Downgrade Flag' datatype='integer' name='[downgrade_flag]' role='measure' type='quantitative' />
+      <column caption='Duration Days' datatype='real' name='[duration_days]' role='measure' type='quantitative' />
+      <column caption='Duration Months' datatype='real' name='[duration_months]' role='measure' type='quantitative' />
+      <column caption='End Date' datatype='datetime' name='[end_date]' role='dimension' type='ordinal' />
+      <column caption='Escalation Flag' datatype='integer' name='[escalation_flag]' role='measure' type='quantitative' />
+      <column caption='Feedback Text' datatype='string' name='[feedback_text]' role='dimension' type='nominal' />
+      <column caption='First Response Time Minutes' datatype='integer' name='[first_response_time_minutes]' role='measure' type='quantitative' />
+      <column caption='Industry' datatype='string' name='[industry]' role='dimension' type='nominal' />
+      <column caption='Is Reactivation' datatype='integer' name='[is_reactivation]' role='measure' type='quantitative' />
+      <column caption='Is Trial (Subscriptions)' datatype='integer' name='[is_trial (subscriptions)]' role='measure' type='quantitative' />
+      <column caption='Is Trial' datatype='integer' name='[is_trial]' role='measure' type='quantitative' />
+      <column caption='Mrr Amount' datatype='integer' name='[mrr_amount]' role='measure' type='quantitative' />
+      <column caption='Plan Tier (Subscriptions)' datatype='string' name='[plan_tier (subscriptions)]' role='dimension' type='nominal' />
+      <column caption='Plan Tier' datatype='string' name='[plan_tier]' role='dimension' type='nominal' />
+      <column caption='Preceding Downgrade Flag' datatype='integer' name='[preceding_downgrade_flag]' role='measure' type='quantitative' />
+      <column caption='Preceding Upgrade Flag' datatype='integer' name='[preceding_upgrade_flag]' role='measure' type='quantitative' />
+      <column caption='Priority' datatype='string' name='[priority]' role='dimension' type='nominal' />
+      <column caption='Reason Code' datatype='string' name='[reason_code]' role='dimension' type='nominal' />
+      <column caption='Referral Source' datatype='string' name='[referral_source]' role='dimension' type='nominal' />
+      <column caption='Refund Amount Usd' datatype='real' name='[refund_amount_usd]' role='measure' type='quantitative' />
+      <column caption='Resolution Time Hours' datatype='real' name='[resolution_time_hours]' role='measure' type='quantitative' />
+      <column caption='Satisfaction Label' datatype='string' name='[satisfaction_label]' role='dimension' type='nominal' />
+      <column caption='Satisfaction Score' datatype='real' name='[satisfaction_score]' role='measure' type='quantitative' />
+      <column caption='Seats (Subscriptions)' datatype='integer' name='[seats (subscriptions)]' role='measure' type='quantitative' />
+      <column caption='Seats' datatype='integer' name='[seats]' role='measure' type='quantitative' />
+      <column caption='Signup Date' datatype='datetime' name='[signup_date]' role='dimension' type='ordinal' />
+      <column caption='Sla Breached' datatype='integer' name='[sla_breached]' role='measure' type='quantitative' />
+      <column caption='Start Date' datatype='datetime' name='[start_date]' role='dimension' type='ordinal' />
+      <column caption='Submitted At' datatype='datetime' name='[submitted_at]' role='dimension' type='ordinal' />
+      <column caption='Subscription Id' datatype='string' name='[subscription_id]' role='dimension' type='nominal' />
+      <column caption='Subscription Status' datatype='string' name='[subscription_status]' role='dimension' type='nominal' />
+      <column caption='Ticket Id' datatype='string' name='[ticket_id]' role='dimension' type='nominal' />
+      <column caption='Upgrade Flag' datatype='integer' name='[upgrade_flag]' role='measure' type='quantitative' />
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;India&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='accounts1' id='accounts_08FAB6C1587746F9A1A92F9EA1ADD2BE'>
+            <properties context=''>
+              <relation connection='postgres.16icfux08elj2c13m3cvn1dabiuj' name='accounts' table='[public].[accounts]' type='table' />
+            </properties>
+          </object>
+          <object caption='churn_events' id='churn_events_E6797AB9E78B4BE39A44102658C98FB3'>
+            <properties context=''>
+              <relation connection='postgres.16icfux08elj2c13m3cvn1dabiuj' name='churn_events' table='[public].[churn_events]' type='table' />
+            </properties>
+          </object>
+          <object caption='subscriptions' id='subscriptions_ED89C8A83D1844469EB79439D0C9D2D8'>
+            <properties context=''>
+              <relation connection='postgres.16icfux08elj2c13m3cvn1dabiuj' name='subscriptions' table='[public].[subscriptions]' type='table' />
+            </properties>
+          </object>
+          <object caption='support_tickets' id='support_tickets_437EDC679DB64F9284C29618836518D5'>
+            <properties context=''>
+              <relation connection='postgres.16icfux08elj2c13m3cvn1dabiuj' name='support_tickets' table='[public].[support_tickets]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[account_id]' />
+              <expression op='[account_id (churn_events)]' />
+            </expression>
+            <first-end-point object-id='accounts_08FAB6C1587746F9A1A92F9EA1ADD2BE' />
+            <second-end-point object-id='churn_events_E6797AB9E78B4BE39A44102658C98FB3' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[account_id]' />
+              <expression op='[account_id (subscriptions)]' />
+            </expression>
+            <first-end-point object-id='accounts_08FAB6C1587746F9A1A92F9EA1ADD2BE' />
+            <second-end-point object-id='subscriptions_ED89C8A83D1844469EB79439D0C9D2D8' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[account_id]' />
+              <expression op='[account_id (support_tickets)]' />
+            </expression>
+            <first-end-point object-id='accounts_08FAB6C1587746F9A1A92F9EA1ADD2BE' />
+            <second-end-point object-id='support_tickets_437EDC679DB64F9284C29618836518D5' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Churn Reasons'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='accounts (saas_retention_db)' name='federated.1g0t1s70i6gt651fuh1w3060xwnu' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1g0t1s70i6gt651fuh1w3060xwnu'>
+            <column caption='churn_events' datatype='table' name='[__tableau_internal_object_id__].[churn_events_E6797AB9E78B4BE39A44102658C98FB3]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[churn_events_E6797AB9E78B4BE39A44102658C98FB3]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:churn_events_E6797AB9E78B4BE39A44102658C98FB3:qk]' pivot='key' type='quantitative' />
+            <column caption='Churn Category' datatype='string' name='[churn_category]' role='dimension' type='nominal' />
+            <column-instance column='[churn_category]' derivation='None' name='[none:churn_category:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1g0t1s70i6gt651fuh1w3060xwnu].[none:churn_category:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1g0t1s70i6gt651fuh1w3060xwnu].[__tableau_internal_object_id__].[cnt:churn_events_E6797AB9E78B4BE39A44102658C98FB3:qk]</rows>
+        <cols>[federated.1g0t1s70i6gt651fuh1w3060xwnu].[none:churn_category:nk]</cols>
+      </table>
+      <simple-id uuid='{B24C3D00-D1EB-4720-AD83-D204A981E049}' />
+    </worksheet>
+    <worksheet name='Churn by Industry'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='accounts (saas_retention_db)' name='federated.1g0t1s70i6gt651fuh1w3060xwnu' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1g0t1s70i6gt651fuh1w3060xwnu'>
+            <column caption='accounts1' datatype='table' name='[__tableau_internal_object_id__].[accounts_08FAB6C1587746F9A1A92F9EA1ADD2BE]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[accounts_08FAB6C1587746F9A1A92F9EA1ADD2BE]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:accounts_08FAB6C1587746F9A1A92F9EA1ADD2BE:qk]' pivot='key' type='quantitative' />
+            <column caption='Churn Flag' datatype='integer' name='[churn_flag]' role='measure' type='quantitative' />
+            <column caption='Industry' datatype='string' name='[industry]' role='dimension' type='nominal' />
+            <column-instance column='[churn_flag]' derivation='None' name='[none:churn_flag:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[industry]' derivation='None' name='[none:industry:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1g0t1s70i6gt651fuh1w3060xwnu].[none:churn_flag:qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1g0t1s70i6gt651fuh1w3060xwnu].[__tableau_internal_object_id__].[cnt:accounts_08FAB6C1587746F9A1A92F9EA1ADD2BE:qk]</rows>
+        <cols>[federated.1g0t1s70i6gt651fuh1w3060xwnu].[none:industry:nk]</cols>
+      </table>
+      <simple-id uuid='{15C8E1A3-A0DB-4C34-91B9-1AD90A9E1F13}' />
+    </worksheet>
+    <worksheet name='Churn by Plan Tier'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='accounts (saas_retention_db)' name='federated.1g0t1s70i6gt651fuh1w3060xwnu' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1g0t1s70i6gt651fuh1w3060xwnu'>
+            <column caption='churn_events' datatype='table' name='[__tableau_internal_object_id__].[churn_events_E6797AB9E78B4BE39A44102658C98FB3]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[churn_events_E6797AB9E78B4BE39A44102658C98FB3]' derivation='Count' name='[__tableau_internal_object_id__].[pcto:cnt:churn_events_E6797AB9E78B4BE39A44102658C98FB3:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Pane' type='PctTotal' />
+            </column-instance>
+            <column caption='Churn Flag' datatype='integer' name='[churn_flag]' role='measure' type='quantitative' />
+            <column-instance column='[plan_tier]' derivation='None' name='[none:plan_tier:nk]' pivot='key' type='nominal' />
+            <column-instance column='[churn_flag]' derivation='Sum' name='[pcto:sum:churn_flag:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Pane' type='PctTotal' />
+            </column-instance>
+            <column caption='Plan Tier' datatype='string' name='[plan_tier]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1g0t1s70i6gt651fuh1w3060xwnu].[pcto:sum:churn_flag:qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1g0t1s70i6gt651fuh1w3060xwnu].[__tableau_internal_object_id__].[pcto:cnt:churn_events_E6797AB9E78B4BE39A44102658C98FB3:qk]</rows>
+        <cols>[federated.1g0t1s70i6gt651fuh1w3060xwnu].[none:plan_tier:nk]</cols>
+        <percentages enabled='true' mode='pane' />
+      </table>
+      <simple-id uuid='{86D9FC9E-BA23-4974-8CD5-7F724F978EF2}' />
+    </worksheet>
+    <worksheet name='MRR Trends'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='accounts (saas_retention_db)' name='federated.1g0t1s70i6gt651fuh1w3060xwnu' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1g0t1s70i6gt651fuh1w3060xwnu'>
+            <column caption='Mrr Amount' datatype='integer' name='[mrr_amount]' role='measure' type='quantitative' />
+            <column caption='Start Date' datatype='datetime' name='[start_date]' role='dimension' type='ordinal' />
+            <column-instance column='[mrr_amount]' derivation='Sum' name='[sum:mrr_amount:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[start_date]' derivation='Month-Trunc' name='[tmn:start_date:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.1g0t1s70i6gt651fuh1w3060xwnu].[sum:mrr_amount:qk]</rows>
+        <cols>[federated.1g0t1s70i6gt651fuh1w3060xwnu].[tmn:start_date:qk]</cols>
+      </table>
+      <simple-id uuid='{82EB19A4-2511-44E8-B69F-1E957CCB2E0B}' />
+    </worksheet>
+    <worksheet name='Satisfaction by Priority'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='accounts (saas_retention_db)' name='federated.1g0t1s70i6gt651fuh1w3060xwnu' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1g0t1s70i6gt651fuh1w3060xwnu'>
+            <column-instance column='[satisfaction_score]' derivation='Avg' name='[avg:satisfaction_score:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[priority]' derivation='None' name='[none:priority:nk]' pivot='key' type='nominal' />
+            <column caption='Priority' datatype='string' name='[priority]' role='dimension' type='nominal' />
+            <column caption='Satisfaction Score' datatype='real' name='[satisfaction_score]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1g0t1s70i6gt651fuh1w3060xwnu].[none:priority:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1g0t1s70i6gt651fuh1w3060xwnu].[avg:satisfaction_score:qk]</rows>
+        <cols>[federated.1g0t1s70i6gt651fuh1w3060xwnu].[none:priority:nk]</cols>
+      </table>
+      <simple-id uuid='{436C9A0D-F9BA-499F-84D2-9CBAB646C883}' />
+    </worksheet>
+    <worksheet name='Sheet 6'>
+      <table>
+        <view>
+          <datasources>
+            <datasource name='Clipboard_20260627T171907' />
+          </datasources>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{48CB840D-E9C3-4710-A3B9-1EF67D69D4BD}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>B2B SaaS Retention Intelligence Dashboard</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style />
+      <size sizing-mode='automatic' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98416' id='36' param='horz' type-v2='layout-flow' w='98810' x='595' y='792'>
+            <zone h='98416' id='26' param='vert' type-v2='layout-flow' w='98810' x='595' y='792'>
+              <zone h='4158' id='27' type-v2='title' w='98810' x='595' y='792'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='94258' id='20' param='horz' type-v2='layout-flow' w='98810' x='595' y='4950'>
+                <zone h='94258' id='13' param='horz' type-v2='layout-flow' w='98810' x='595' y='4950'>
+                  <zone h='94258' id='7' param='horz' type-v2='layout-flow' w='61412' x='595' y='4950'>
+                    <zone h='94258' id='5' type-v2='layout-basic' w='61412' x='595' y='4950'>
+                      <zone h='52140' id='3' name='Churn by Plan Tier' w='35187' x='595' y='4950'>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                      <zone h='42118' id='17' name='Churn by Industry' w='61412' x='595' y='57090'>
+                        <layout-cache cell-count-w='5' minheight='183' non-cell-size-w='59' type-h='scalable' type-w='cell' />
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                      <zone h='52140' id='22' name='Churn Reasons' w='26225' x='35782' y='4950'>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                    </zone>
+                  </zone>
+                  <zone fixed-size='503' h='94258' id='23' is-fixed='true' type-v2='layout-basic' w='37398' x='62007' y='4950'>
+                    <zone h='94258' id='38' is-fixed='true' type-v2='layout-basic' w='37398' x='62007' y='4950'>
+                      <zone h='50199' id='12' param='vert' type-v2='layout-flow' w='37398' x='62007' y='4950'>
+                        <zone fixed-size='478' h='45843' id='8' is-fixed='true' name='MRR Trends' w='37398' x='62007' y='4950'>
+                          <layout-cache minheight='198' minwidth='174' type-h='scalable' type-w='scalable' />
+                          <zone-style>
+                            <format attr='border-color' value='#000000' />
+                            <format attr='border-style' value='none' />
+                            <format attr='border-width' value='0' />
+                            <format attr='margin' value='4' />
+                          </zone-style>
+                        </zone>
+                        <zone fixed-size='44' h='4356' id='35' is-fixed='true' param='vert' type-v2='layout-flow' w='37398' x='62007' y='50793'>
+                          <zone h='4356' id='37' name='Satisfaction by Priority' pane-specification-id='0' param='[federated.1g0t1s70i6gt651fuh1w3060xwnu].[none:priority:nk]' type-v2='color' w='37398' x='62007' y='50793'>
+                            <zone-style>
+                              <format attr='border-color' value='#000000' />
+                              <format attr='border-style' value='none' />
+                              <format attr='border-width' value='0' />
+                              <format attr='margin' value='4' />
+                            </zone-style>
+                          </zone>
+                        </zone>
+                      </zone>
+                      <zone h='44059' id='39' param='vert' type-v2='layout-flow' w='37398' x='62007' y='55149'>
+                        <zone h='44059' id='34' name='Satisfaction by Priority' w='37398' x='62007' y='55149'>
+                          <layout-cache minheight='184' type-h='scalable' type-w='fixed' />
+                          <zone-style>
+                            <format attr='border-color' value='#000000' />
+                            <format attr='border-style' value='none' />
+                            <format attr='border-width' value='0' />
+                            <format attr='margin' value='4' />
+                          </zone-style>
+                        </zone>
+                      </zone>
+                    </zone>
+                  </zone>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <layout-options>
+            <title>
+              <formatted-text>
+                <run>B2B SaaS Retention Intelligence Dashboard</run>
+              </formatted-text>
+            </title>
+          </layout-options>
+          <size maxheight='1550' minheight='1550' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='33' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97916' id='32' param='vert' type-v2='layout-flow' w='98438' x='781' y='1042'>
+                <zone h='5469' id='27' type-v2='title' w='98438' x='781' y='1042'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='51140' id='3' is-fixed='true' name='Churn by Plan Tier' w='34082' x='781' y='6511'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='51140' id='22' is-fixed='true' name='Churn Reasons' w='25391' x='34863' y='6511'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='48959' id='8' is-fixed='true' name='MRR Trends' w='38965' x='60254' y='6511'>
+                  <layout-cache minheight='198' minwidth='174' type-h='scalable' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='41307' id='17' is-fixed='true' name='Churn by Industry' w='59473' x='781' y='57651'>
+                  <layout-cache cell-count-w='5' minheight='183' non-cell-size-w='59' type-h='scalable' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{489CA11C-13FD-4DF9-8952-A705B8EA1214}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='51'>
+    <window class='worksheet' name='Churn by Plan Tier'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1g0t1s70i6gt651fuh1w3060xwnu].[pcto:sum:churn_flag:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{D3E1F51E-F265-42AF-A437-F3EF62C0AE57}' />
+    </window>
+    <window class='worksheet' name='MRR Trends'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{122F5C72-B9C6-49BE-BFA4-E7BE7B6921DA}' />
+    </window>
+    <window class='worksheet' name='Churn Reasons'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1g0t1s70i6gt651fuh1w3060xwnu].[none:churn_category:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{D83199A5-566F-4A18-8C06-57B9E5F2C2B4}' />
+    </window>
+    <window class='worksheet' name='Satisfaction by Priority'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1g0t1s70i6gt651fuh1w3060xwnu].[none:priority:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{9B5B3D04-BE79-4028-8146-8549FF0EB473}' />
+    </window>
+    <window class='worksheet' name='Churn by Industry'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1g0t1s70i6gt651fuh1w3060xwnu].[none:churn_flag:qk]' show-title='false' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <floating-toolbar-visibility value='1' />
+      </viewpoint>
+      <simple-id uuid='{516EB709-2E22-4EAC-A137-5F6AE5C8428F}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Churn Reasons'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Churn by Industry'>
+          <zoom type='entire-view' />
+          <floating-toolbar-visibility value='1' />
+        </viewpoint>
+        <viewpoint name='Churn by Plan Tier'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='MRR Trends'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Satisfaction by Priority'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='37' />
+      <simple-id uuid='{1BEB8562-304E-4EB0-8E53-C1147100C9A9}' />
+    </window>
+    <window class='worksheet' name='Sheet 6'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{3A62E1B5-4151-4A09-A201-AD08120B6568}' />
+    </window>
+  </windows>
+</workbook>

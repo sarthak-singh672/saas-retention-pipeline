@@ -1,0 +1,47 @@
+
+-- Query 4: Customer Lifetime Value (LTV)
+-- Business Question: How much revenue does each customer
+-- generate over their entire relationship with us?
+
+WITH account_revenue AS (
+    SELECT
+        s.account_id,
+        SUM(s.mrr_amount)                           AS total_revenue,
+        MIN(s.start_date)                           AS first_subscription,
+        MAX(s.end_date)                             AS last_subscription,
+        COUNT(DISTINCT s.subscription_id)           AS total_subscriptions,
+        MAX(s.upgrade_flag)                         AS ever_upgraded
+    FROM subscriptions s
+    GROUP BY s.account_id
+),
+ltv_calc AS (
+    SELECT
+        ar.account_id,
+        a.plan_tier,
+        a.industry,
+        a.country,
+        ROUND(ar.total_revenue::NUMERIC, 2)         AS lifetime_revenue,
+        EXTRACT(DAY FROM (
+            ar.last_subscription - ar.first_subscription
+        ))                                          AS customer_lifespan_days,
+        ROUND(
+            EXTRACT(DAY FROM (
+                ar.last_subscription - ar.first_subscription
+            )) / 30.0, 1
+        )                                           AS customer_lifespan_months,
+        ar.total_subscriptions,
+        ar.ever_upgraded,
+        a.churn_flag
+    FROM account_revenue ar
+    JOIN accounts a ON ar.account_id = a.account_id
+)
+SELECT
+    plan_tier,
+    COUNT(account_id)                               AS total_customers,
+    ROUND(AVG(lifetime_revenue)::NUMERIC, 2)        AS avg_ltv,
+    ROUND(MAX(lifetime_revenue)::NUMERIC, 2)        AS max_ltv,
+    ROUND(MIN(lifetime_revenue)::NUMERIC, 2)        AS min_ltv,
+    ROUND(AVG(customer_lifespan_months)::NUMERIC,1) AS avg_lifespan_months
+FROM ltv_calc
+GROUP BY plan_tier
+ORDER BY avg_ltv DESC;

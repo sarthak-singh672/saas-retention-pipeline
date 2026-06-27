@@ -1,0 +1,4 @@
+"plan_tier","total_customers","avg_ltv","max_ltv","min_ltv","avg_lifespan_months"
+"BASIC",168,24094.49,138060.00,456.00,7.2
+"PRO",178,22296.16,133298.00,190.00,8.1
+"ENTERPRISE",154,21572.44,130152.00,1796.00,8.0

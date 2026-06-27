@@ -1,0 +1,33 @@
+
+-- Query 6: Feature Adoption — Churned vs Retained Customers
+-- Business Question: Which features do retained customers use
+-- more than churned customers?
+
+
+WITH account_usage AS (
+    SELECT
+        a.account_id,
+        a.churn_flag,
+        fu.feature_name,
+        COUNT(fu.usage_id)                          AS usage_count,
+        AVG(fu.usage_duration_mins)                 AS avg_duration_mins
+    FROM accounts a
+    JOIN subscriptions s
+        ON a.account_id = s.account_id
+    JOIN feature_usage fu
+        ON s.subscription_id = fu.subscription_id
+    GROUP BY a.account_id, a.churn_flag, fu.feature_name
+)
+SELECT
+    feature_name,
+    ROUND(AVG(CASE WHEN churn_flag = 0
+        THEN usage_count END)::NUMERIC, 2)          AS avg_usage_retained,
+    ROUND(AVG(CASE WHEN churn_flag = 1
+        THEN usage_count END)::NUMERIC, 2)          AS avg_usage_churned,
+    ROUND(AVG(CASE WHEN churn_flag = 0
+        THEN avg_duration_mins END)::NUMERIC, 2)    AS avg_mins_retained,
+    ROUND(AVG(CASE WHEN churn_flag = 1
+        THEN avg_duration_mins END)::NUMERIC, 2)    AS avg_mins_churned
+FROM account_usage
+GROUP BY feature_name
+ORDER BY avg_usage_retained DESC;

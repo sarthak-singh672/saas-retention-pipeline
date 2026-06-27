@@ -1,0 +1,4 @@
+"plan_tier","total_accounts","churned_accounts","churn_rate_pct","retained_accounts"
+"PRO",178,129,72.47,49
+"ENTERPRISE",154,108,70.13,46
+"BASIC",168,115,68.45,53

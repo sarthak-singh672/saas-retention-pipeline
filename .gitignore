@@ -1,0 +1,20 @@
+# Virtual environment — never commit this to GitHub
+.venv/
+
+# PyCharm IDE settings
+.idea/
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment variables (if you add secrets later)
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Excel temp files
+~$*.xlsx
