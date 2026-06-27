@@ -133,8 +133,7 @@ The Gemini API generates per-account retention actions based on churn probabilit
 
 The Tableau dashboard covers six views: churn by plan tier, MRR trends over time, churn reasons by category, satisfaction by support priority, churn by industry, and a combined retention intelligence summary.
 
-[![Screenshot 2026-06-27 at 7.27.06 PM.png](..%2F..%2FDesktop%2FScreenshot%202026-06-27%20at%207.27.06%E2%80%AFPM.png)
-]
+[![Dashboard](docs/dashboard.png)]
 
 ---
 
